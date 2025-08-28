@@ -33,8 +33,7 @@
 
 <div class="container">
     <header>
-        <h1>🚌 Horarios Vitrasa Vigo</h1>
-        <p>Acceso rápido aos horarios das paradas</p>
+        <h1>🚌 Horarios</h1>
     </header>
     
     <div class="busqueda">
@@ -44,7 +43,6 @@
                 bind:value={numeroParada}
                 placeholder="Introduce o número de parada"
                 on:keypress={handleKeyPress}
-                maxlength="5"
             />
             <button on:click={buscarParada} class="buscar-btn">
                 → Ver Horarios
@@ -61,15 +59,15 @@
                     on:click={() => redirigirAParada(parada.id)}
                     title="Ver horarios da parada {parada.id}"
                 >
-                    <span class="parada-numero">{parada.id}</span>
                     <span class="parada-nome">{parada.nome}</span>
+                    <span class="parada-numero">{parada.id}</span>
                 </button>
             {/each}
         </div>
     </div>
     
     <footer>
-        <p>Horarios son proporcionados por <a href="http://www.vitrasa.es" target="_blank">Vitrasa</a></p>
+        <p>Horarios proporcionados por <a href="http://www.vitrasa.es" target="_blank">Vitrasa</a></p>
     </footer>
 </div>
 
@@ -93,11 +91,6 @@
         margin: 0;
         font-size: 2.5em;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    header p {
-        margin: 10px 0 0 0;
-        opacity: 0.9;
     }
     
     .busqueda {
@@ -183,18 +176,16 @@
     }
     
     .parada-numero {
-        font-size: 1.3em;
+        font-size: 1em;
         font-weight: bold;
-        background: rgba(255, 255, 255, 0.2);
         padding: 8px 12px;
-        border-radius: 6px;
         min-width: 60px;
         text-align: center;
     }
     
     .parada-nome {
         flex: 1;
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
     
     footer {
